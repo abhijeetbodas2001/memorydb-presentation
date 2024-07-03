@@ -54,6 +54,8 @@ Amazon MemoryDB provides:
 
 # Working
 
+### Decoupling durability
+
 ```quote
 MemoryDB offloads durability by leveraging a distributed transaction log
 service. A transaction log provides low-latency and strongly consistent commits
@@ -65,6 +67,8 @@ We use Redis as an in-memory execution and storage engine but redirect its
 existing replication stream into the transaction log, which is responsible for
 propagation of writes to replicas and leader election
 ```
+
+### Maintaining Consistency
 
 ```quote
 After a client sends a mutation, the reply from the mutation operation is stored
